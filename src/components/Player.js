@@ -2,13 +2,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 
-const Player = ({currentSong}) => {
+const Player = ({currentSong, isPlaying, setIsPlaying}) => {
 
     const audioRef = useRef(null);
 
     const playSongHandler = (e) => {
         const audio = audioRef.current;
-        audio.play();
+        if (isPlaying) {
+            audio.pause();
+            setIsPlaying(!isPlaying)
+        } else {
+            audio.play();
+            setIsPlaying(!isPlaying)
+        }
     }
 
     return (

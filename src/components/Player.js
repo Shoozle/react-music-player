@@ -7,8 +7,8 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
 
     const audioRef = useRef(null);
     const [songInfo, setSongInfo] = useState({
-        currentTime: null,
-        duration: null
+        currentTime: 0,
+        duration: 0
     })
 
     const playSongHandler = (e) => {
@@ -37,8 +37,9 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
     }
 
     const dragHandler = (e) => {
+        const audio = audioRef.current;
         const currentTime = e.target.value;
-        audioRef.current.currentTime = currentTime;
+        audio.currentTime = currentTime;
         setSongInfo({
             ...songInfo,
             currentTime

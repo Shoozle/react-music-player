@@ -5,7 +5,7 @@ const Player = () => {
     return (
         <div className="player">
             <div className="time__control">
-                <p>Star Time</p>
+                <p>Start Time</p>
                 <input type="range" />
                 <p>End Time</p>
             </div>

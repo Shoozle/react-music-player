@@ -2,7 +2,7 @@
 const Song = ({currentSong}) => {
     return (
         <div className="song__container">
-            <img src={currentSong.cover} />
+            <img src={currentSong.cover} alt={currentSong.song} />
             <h2>{currentSong.name}</h2>
             <h3>{currentSong.artists}</h3>
         </div>

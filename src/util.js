@@ -4,7 +4,7 @@ function chillHop() {
     return [
         {
             name: "travelbag",
-            artists: ["mommy, Sleepy Fish"],
+            artists: ["mommy", "Sleepy Fish"],
             cover: "https://chillhop.com/wp-content/uploads/2021/05/1245c0271290a3196328c0cf4aaa910cd873dfe7-1024x1024.jpg",
             id: uuidv4(),
             active: true,
@@ -13,7 +13,7 @@ function chillHop() {
         },
         {
             name: "Paraglider",
-            artists: ["Kendall Miles, HERB"],
+            artists: ["Kendall Miles", "HERB"],
             cover: "https://chillhop.com/wp-content/uploads/2020/07/4fac6bb3a32f9e76b465990ba8d97d7db8a372f5-1024x1024.jpg",
             id: uuidv4(),
             active: false,

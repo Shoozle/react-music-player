@@ -1,8 +1,15 @@
 import LibrarySong from "./LibrarySong"
 
-const Library = ({ songs }) => {
+const Library = ({ songs, setCurrentSong }) => {
 
-    const librarySongs = songs.map(song => <LibrarySong key={song.id} song={song} />)
+    const librarySongs = songs.map(song => 
+        <LibrarySong 
+            key={song.id} 
+            song={song} 
+            setCurrentSong={setCurrentSong}
+            songs={songs}
+        />
+    )
 
     console.table(songs)
 

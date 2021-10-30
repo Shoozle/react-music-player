@@ -2,7 +2,7 @@ import './styles/app.scss';
 
 import Player from './components/Player';
 import Song from './components/Song';
-import data from './util';
+import data from './data';
 import { useRef, useState } from 'react';
 import Library from './components/Library';
 import Nav from './components/Nav';
@@ -14,7 +14,8 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
-    duration: 0
+    duration: 0,
+    animationPercentage: 0
   });
   const [libraryStatus, setLibraryStatus] = useState(false);
 
@@ -23,8 +24,11 @@ function App() {
   const timeUpdateHandler = (e) => {
     const currentTime = e.target.currentTime;
     const duration = e.target.duration;
+    const roundedCurrent = Math.round(currentTime);
+    const roundedDuration = Math.round(duration);
+    const animationPercentage = Math.round((roundedCurrent / roundedDuration) * 100)
     setSongInfo({
-      ...songInfo, currentTime, duration
+      ...songInfo, currentTime, duration, animationPercentage
     })
   }
 

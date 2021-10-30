@@ -55,27 +55,37 @@ const Player = ({ audioRef, songInfo, setSongInfo, songs, setSongs, currentSong,
             setCurrentSong(songs[(currentIndex + 1) % songs.length])
         }
         if (dir === 'skipback') {
-            if ((currentIndex -1 ) === -1) {
-                setCurrentSong(songs[songs.length -1])
+            if ((currentIndex - 1) === -1) {
+                setCurrentSong(songs[songs.length - 1])
                 return;
             }
             setCurrentSong(songs[(currentIndex - 1) % songs.length])
         }
     }
 
+    const trackAnimStyle = {
+        transform: `translateX(${songInfo.animationPercentage}%)`
+    }
+
     return (
         <div className="player">
             <div className="time__control">
                 <p>{getTime(songInfo.currentTime)}</p>
-                <input
-                    min={0}
-                    max={songInfo.duration || 0}
-                    value={songInfo.currentTime}
-                    type="range"
-                    onChange={dragHandler}
+                <div 
+                    style={
+                    {background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`}} 
+                    className="track">
+                    <input
+                        min={0}
+                        max={songInfo.duration || 0}
+                        value={songInfo.currentTime}
+                        type="range"
+                        onChange={dragHandler}
 
-                />
-                <p>{getTime(songInfo.duration)}</p>
+                    />
+                    <div style={trackAnimStyle} className="animate--track"></div>
+                </div>
+                <p>{songInfo.duration ? getTime(songInfo.duration) : "0:00"}</p>
             </div>
             <div className="play__control">
                 <FontAwesomeIcon

@@ -1,5 +1,4 @@
 import LibrarySong from "./LibrarySong"
-import { playAudio } from "../util";
 
 const Library = ({ songs, setCurrentSong, audioRef, isPlaying, setSongs, libraryStatus }) => {
 
@@ -15,7 +14,7 @@ const Library = ({ songs, setCurrentSong, audioRef, isPlaying, setSongs, library
         />
     )
 
-    playAudio(isPlaying, audioRef);
+    if (isPlaying) audioRef.current.play();
     
     return (
         <div className={`library ${libraryStatus ? 'active--library' : ''}`}>

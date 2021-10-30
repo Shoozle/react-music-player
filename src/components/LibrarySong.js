@@ -1,9 +1,7 @@
-import { playAudio } from "../util";
-
 const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, setSongs }) => {
 
-    const songSelectHandler = () => {
-        setCurrentSong(song);
+    const songSelectHandler = async () => {
+        await setCurrentSong(song);
 
         const newSongs = songs.map((sng) => {
             if (sng.id === song.id) {
@@ -18,11 +16,8 @@ const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, setSong
                 }
             }
         })
-
         setSongs(newSongs)
     }
-
-    playAudio(isPlaying, audioRef)
 
     return (
         <div onClick={songSelectHandler} className={`librarySong ${song.active ? 'selected' : ''}`}>

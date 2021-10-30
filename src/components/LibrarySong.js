@@ -1,7 +1,5 @@
 const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, setSongs }) => {
 
-
-
     const songSelectHandler = () => {
         setCurrentSong(song);
 

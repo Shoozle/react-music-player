@@ -13,9 +13,7 @@ const Library = ({ songs, setCurrentSong, audioRef, isPlaying, setSongs }) => {
             setSongs={setSongs}
         />
     )
-
-    console.table(songs)
-
+    
     return (
         <div className="library">
             <h2>Library</h2>

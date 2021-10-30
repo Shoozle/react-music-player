@@ -5,6 +5,7 @@ import Song from './components/Song';
 import data from './util';
 import { useRef, useState } from 'react';
 import Library from './components/Library';
+import Nav from './components/Nav';
 
 function App() {
   //Array returned from data set to state
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Library 
         audioRef={audioRef} 
         setCurrentSong={setCurrentSong} 

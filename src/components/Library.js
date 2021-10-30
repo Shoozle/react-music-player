@@ -1,6 +1,6 @@
 import LibrarySong from "./LibrarySong"
 
-const Library = ({ songs, setCurrentSong, audioRef, isPlaying }) => {
+const Library = ({ songs, setCurrentSong, audioRef, isPlaying, setSongs }) => {
 
     const librarySongs = songs.map(song => 
         <LibrarySong 
@@ -10,6 +10,7 @@ const Library = ({ songs, setCurrentSong, audioRef, isPlaying }) => {
             songs={songs}
             audioRef={audioRef}
             isPlaying={isPlaying}
+            setSongs={setSongs}
         />
     )
 

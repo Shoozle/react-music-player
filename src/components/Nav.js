@@ -4,13 +4,13 @@ import { faMusic } from "@fortawesome/free-solid-svg-icons";
 const Nav = () => {
 
     return (
-        <Nav>
-            <h1>Music-eo</h1>
+        <nav>
+            <h1>Musiceo</h1>
             <button>
                 Library
                 <FontAwesomeIcon icon={faMusic} />
             </button>
-        </Nav>
+        </nav>
     )
 }
 

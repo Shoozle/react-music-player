@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+
       <Library 
         audioRef={audioRef} 
         setCurrentSong={setCurrentSong} 

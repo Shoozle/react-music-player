@@ -70,3 +70,12 @@ input[type="range"]::-webkit-slider-thumb {
     pointer-events: none;
     z-index: -1;
 }
+
+@media screen and (max-width: 45rem ) {
+    .time__control {
+        width: 90%;
+    }
+    .play__control {
+        width: 60%;
+    }
+}

@@ -14,6 +14,13 @@ h1, h2, h3 {
     color: rgb(250, 250, 250);
     font-weight: 400;
 }
+.App {
+    transition: all .5s ease;
+}
+
+.library--active {
+    margin-left: 30%;
+}
 
 @import "./player";
 @import "./song";
